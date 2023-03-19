@@ -1,6 +1,5 @@
-import { action, makeAutoObservable, observable } from "mobx";
+import { makeAutoObservable } from "mobx";
 import axios from "axios";
-import moment from "moment";
 
 interface News {
   id: number;
@@ -17,7 +16,7 @@ export class NewsListStore {
   newsList: News[] = [];
   pollingInterval: NodeJS.Timer | null = null;
   darkMode: boolean = true;
-  
+
   constructor() {
     makeAutoObservable(this)
   }
@@ -41,7 +40,7 @@ export class NewsListStore {
         const newsList: News[] = [];
 
         let page = 0;
-        while (page * PER_PAGE < newsIds.length ) {
+        while (page * PER_PAGE < newsIds.length) {
           const pageNewsIds = response.data.slice(
             page * PER_PAGE,
             (page + 1) * PER_PAGE
@@ -59,7 +58,7 @@ export class NewsListStore {
                       by: response.data.by,
                       time: response.data.time,
                     };
-                    
+
                     newsList.push(news);
                   })
                   .catch((error) => console.log(error));

@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
-import { Comment, Header, Button, Loader, Container } from "semantic-ui-react";
+import { Header, Button, Loader, Container } from "semantic-ui-react";
 import moment from "moment";
 import { IComment, NewsDetailsStore } from "./../../stores/news-details.store";
 import { INavigationData, withNavigation } from "../../hocs/with-route-params";
-import { isObservable } from "mobx";
 import CommentsList from "../../components/CommentsList";
 
 type IProps = INavigationData;

@@ -1,17 +1,9 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
 import moment from "moment";
 import { newsListStore } from "../../stores/news-list.store";
 import { Container, Header, Button, List } from "semantic-ui-react";
-
-interface News {
-  id: number;
-  title: string;
-  score: number;
-  by: string;
-  time: number;
-}
 
 export const NewsList = observer(
   class NewsList extends React.Component {
